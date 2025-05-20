@@ -1,4 +1,4 @@
-module github.com/ccfos/nightingale/v6
+module github.com/ccfos/nightingale/v8
 
 go 1.22
 
