@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+
 	"fmt"
 	"net/http"
 	"strings"
@@ -51,8 +52,8 @@ func beforeWrite(key string, items []prompb.TimeSeries, forceUseServerTS bool, e
 
 		return proto.Marshal(req)
 	}
-
 	return json.Marshal(items)
+	//return json.MarshalWithCustomFloat(items)
 }
 
 func (w WriterType) Write(key string, items []prompb.TimeSeries, headers ...map[string]string) {
